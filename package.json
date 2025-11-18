@@ -37,6 +37,7 @@
     ],
     "collectCoverageFrom": [
       "src/app/**/*.{ts,tsx}",
+      "src/components/**/*.{ts,tsx}",
       "utils/**/*.{ts,tsx}",
       "!**/*.d.ts",
       "!**/*.config.{js,ts}",
