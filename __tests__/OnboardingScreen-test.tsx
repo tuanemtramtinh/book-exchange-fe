@@ -12,11 +12,11 @@ import OnboardingScreen from "../src/app/onboarding";
 import { storeData } from "../utils/asyncStorage";
 import { useRouter } from "expo-router";
 
-jest.mock("../src/app/hooks/useOnboardingGate", () => ({
-  useOnboardingGate: () => ({
-    markDone: jest.fn(),
-  }),
-}));
+// jest.mock("../src/app/hooks/useOnboardingGate", () => ({
+//   useOnboardingGate: () => ({
+//     markDone: jest.fn(),
+//   }),
+// }));
 
 jest.mock("../src/icons/IconOnboarding1", () => () => null);
 jest.mock("../src/icons/IconOnboarding2", () => () => null);

@@ -58,7 +58,7 @@ const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 export default function OnboardingScreen() {
   const router = useRouter();
   const { width } = useWindowDimensions();
-  const { markDone } = useOnboardingGate();
+  // const { markDone } = useOnboardingGate();
 
   const listRef = useRef<FlatList<Slide>>(null);
   const [index, setIndex] = useState(0);
@@ -75,11 +75,11 @@ export default function OnboardingScreen() {
   const onPrev = () =>
     index > 0 &&
     listRef.current?.scrollToIndex({ index: index - 1, animated: true });
-  const onSkip = () => backToHome();
-  const onDone = async () => {
-    await markDone();
-    router.replace("/auth/login");
-  };
+  // const onSkip = () => backToHome();
+  // const onDone = async () => {
+  //   await markDone();
+  //   router.replace("/auth/login");
+  // };
 
   const viewabilityConfig = { itemVisiblePercentThreshold: 50 };
   const onViewableItemsChanged = useRef(({ viewableItems }: any) => {

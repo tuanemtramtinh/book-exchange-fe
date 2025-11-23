@@ -63,8 +63,6 @@ const books = [
 const categories = ["Tất cả", "Ngoại ngữ", "Ngoại ngữ", "Ngoại ngữ"];
 
 export default function Index() {
-  // const [isLoading, setIsLoading] = useState(true);
-
   // useEffect(() => {
   // //   const checkFirstLaunch = async () => {
   // //     try {
@@ -92,13 +90,6 @@ export default function Index() {
 
   // //   checkFirstLaunch();
   // }, []);
-
-  // if (isLoading) {
-  //   return (
-  //     <View className="flex-1 items-center justify-center bg-white">
-  //       <ActivityIndicator size="large" color="#0000ff" />
-  //     </View>
-  //   );
 
   return (
     <SafeAreaView className="flex-1 bg-white">
@@ -151,7 +142,7 @@ export default function Index() {
                       className="w-full aspect-[164/256] object-cover rounded-lg"
                       resizeMode="cover"
                     />
-                    {book.badge && (
+                    {book.badge != null && (
                       <View className="absolute top-2 left-2 px-2 py-0.5 bg-white rounded-lg">
                         <Text className="text-xs text-gray-800">
                           {book.badge}
@@ -166,7 +157,7 @@ export default function Index() {
                     <Text className="text-xs font-bold text-textPrimary500 tracking-wide">
                       {book.price}
                     </Text>
-                    {book.hasDiscount && book.originalPrice && (
+                    {book.hasDiscount && book.originalPrice != null && (
                       <Text className="text-xs text-gray-500 line-through">
                         {book.originalPrice}
                       </Text>
