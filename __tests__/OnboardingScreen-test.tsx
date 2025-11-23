@@ -52,7 +52,7 @@ describe("<OnboardingScreen />", () => {
     mockStoreData.mockResolvedValue(undefined);
   });
 
-  it("renders the first slide title and description", () => {
+  test("render tiêu đề và mô tả của slide đầu tiên", () => {
     const { getByText } = renderOnboarding();
 
     expect(getByText("Tìm sách nhanh")).toBeTruthy();
@@ -63,7 +63,7 @@ describe("<OnboardingScreen />", () => {
     ).toBeTruthy();
   });
 
-  it("navigates and stores onboarding flag when skipping", async () => {
+  test("bỏ qua sẽ lưu cờ onboarding và điều hướng", async () => {
     const { getByText } = renderOnboarding();
 
     fireEvent.press(getByText("Bỏ qua"));
@@ -74,7 +74,7 @@ describe("<OnboardingScreen />", () => {
     expect(mockRouterReplace).toHaveBeenCalledWith("/auth/login");
   });
 
-  it("does not touch async storage when going to the next slide", () => {
+  test("chuyển sang slide kế tiếp không ghi vào async storage", () => {
     const api = renderOnboarding();
     const { getByText } = api;
 
@@ -85,7 +85,7 @@ describe("<OnboardingScreen />", () => {
     expect(getByText("Đăng bán trong 1 phút")).toBeTruthy();
   });
 
-  it("stores onboarding flag and navigates when finishing the last slide", async () => {
+  test("hoàn tất slide cuối sẽ lưu cờ onboarding và điều hướng", async () => {
     const api = renderOnboarding();
     const { getByText } = api;
 
@@ -100,7 +100,7 @@ describe("<OnboardingScreen />", () => {
     expect(mockRouterReplace).toHaveBeenCalledWith("/auth/login");
   });
 
-  it("updates CTA label as slides advance", () => {
+  test("cập nhật tên của button khi đổi slide", () => {
     const api = renderOnboarding();
     const { getByText } = api;
 

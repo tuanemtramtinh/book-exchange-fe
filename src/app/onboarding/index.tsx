@@ -73,7 +73,8 @@ export default function OnboardingScreen() {
     }
   };
   const onPrev = () =>
-    index > 0 && listRef.current?.scrollToIndex({ index: index - 1, animated: true });
+    index > 0 &&
+    listRef.current?.scrollToIndex({ index: index - 1, animated: true });
   const onSkip = () => backToHome();
   const onDone = async () => {
     await markDone();
@@ -95,8 +96,8 @@ export default function OnboardingScreen() {
     };
   });
 
-  const backToHome = async() => {
-    await storeData('onboarded', '1');
+  const backToHome = async () => {
+    await storeData("onboarded", "1");
     router.replace("/auth/login");
   };
 
@@ -128,10 +129,7 @@ export default function OnboardingScreen() {
           viewabilityConfig={viewabilityConfig}
           onViewableItemsChanged={onViewableItemsChanged}
           renderItem={({ item }) => (
-            <View
-              className="flex-1 items-center px-5"
-              style={{ width }}
-            >
+            <View className="flex-1 items-center px-5" style={{ width }}>
               <View className="mt-2 mb-5 items-center justify-center">
                 <item.IconOnboarding width={width} height={width * 1.1} />
               </View>
@@ -204,10 +202,5 @@ const AnimatedDot = ({
     };
   });
 
-  return (
-    <Animated.View
-      className="rounded-full"
-      style={animatedStyle}
-    />
-  );
+  return <Animated.View className="rounded-full" style={animatedStyle} />;
 };
